@@ -20,17 +20,35 @@ window.addEventListener("load", function () {
 });
 
 //agregar a la propiedad button de p1 la función updateScores al hacer click
+p1.button.addEventListener("click", function () {
+  updateScores(p1, p2);
+});
+
 //agregar a la propiedad button de p2 la función updateScores al hacer click
+p2.button.addEventListener("click", function () {
+  updateScores(p2, p1);
+});
 
 function updateScores(player, opponent) {
   //Si el juego no ha terminado
-  ////Aumentar puntuación del jugador
-  ////Si el jugador gana
-  //////Terminar el juego
-  //////Agregar la clase ganar al jugador
-  //////Agregar la clase perder al oponente
-  //////Desactivar los botones de los jugadores con .button.disabled=true
+  if (!isGameOver) {
+    ////Aumentar puntuación del jugador
+    player.score++;
+    ////Si el jugador gana
+    if (player.score === Number(winningScoreSelect.value)) {
+      //////Terminar el juego
+      //////Agregar la clase ganar al jugador
+      //////Agregar la clase perder al oponente
+      //////Desactivar los botones de los jugadores con .button.disabled=true
+      isGameOver = true;
+      player.display.classList.add("won");
+      opponent.display.classList.add("lost");
+      player.button.disabled = true;
+      opponent.button.disabled = true;
+    }
+  }
   ////Actualizar el contenido del texto del jugador a su puntaje
+  player.display.textContent = player.score;
 }
 
 winningScoreSelect.addEventListener("change", function () {
