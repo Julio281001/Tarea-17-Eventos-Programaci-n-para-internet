@@ -35,7 +35,7 @@ function updateScores(player, opponent) {
     ////Aumentar puntuación del jugador
     player.score++;
     ////Si el jugador gana
-    if (player.score === Number(winningScoreSelect.value)) {
+    if (player.score === Number(winningScore)) {
       //////Terminar el juego
       //////Agregar la clase ganar al jugador
       //////Agregar la clase perder al oponente
@@ -53,6 +53,7 @@ function updateScores(player, opponent) {
 
 winningScoreSelect.addEventListener("change", function () {
   //Al cambiar los puntos cambiar la variable winningScore al valor de "this", tienen que convertirlo a entero
+  winningScore = Number(this.value);
   //Una vez cambiando el valor llamar a reset
 });
 
