@@ -1,0 +1,112 @@
+.section {
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  background-color: slategray;
+  max-width: 50rem;
+  margin: auto;
+  width: 80%;
+}
+
+.card {
+  border-color: rgba(255, 0, 0, 0);
+  border-style: solid;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-image {
+  border-color: rgba(255, 255, 0, 1);
+  border-style: solid;
+}
+
+figure {
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-height: 20rem;
+}
+
+.card-header {
+  border-color: rgba(0, 255, 0, 1);
+  border-style: solid;
+  background-color: whitesmoke;
+}
+
+.card-header > p {
+  font-size: 2rem;
+}
+
+.card-content {
+  border-color: rgba(0, 255, 255, 1);
+  border-style: solid;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+#maxPoints {
+  background: none repeat scroll 0 0 #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.card-footer {
+  border-color: rgba(0, 0, 255, 1);
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.buttons {
+  border-color: rgba(255, 0, 255, 1);
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 70%;
+  max-width: 20rem;
+  height: 2.5em;
+  justify-content: space-around;
+  flex-shrink: 2;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+}
+
+#reset {
+  flex-shrink: 0.5;
+}
+
+button {
+  height: 2.5rem;
+  font-size: 1.5em;
+  overflow: hidden;
+}
+
+.won {
+  color: green;
+}
+
+.lost {
+  color: red;
+}
