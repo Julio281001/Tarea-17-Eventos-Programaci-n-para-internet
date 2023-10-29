@@ -37,12 +37,12 @@ function updateScores(player, opponent) {
     ////Si el jugador gana
     if (player.score === Number(winningScore)) {
       //////Terminar el juego
-      //////Agregar la clase ganar al jugador
-      //////Agregar la clase perder al oponente
-      //////Desactivar los botones de los jugadores con .button.disabled=true
       isGameOver = true;
+      //////Agregar la clase ganar al jugador
       player.display.classList.add("won");
+      //////Agregar la clase perder al oponente
       opponent.display.classList.add("lost");
+      //////Desactivar los botones de los jugadores con .button.disabled=true
       player.button.disabled = true;
       opponent.button.disabled = true;
     }
@@ -55,17 +55,28 @@ winningScoreSelect.addEventListener("change", function () {
   //Al cambiar los puntos cambiar la variable winningScore al valor de "this", tienen que convertirlo a entero
   winningScore = Number(this.value);
   //Una vez cambiando el valor llamar a reset
+  reset();
 });
 
 //Agregar a resetButton la función reset al dar click
+resetButton.addEventListener("click", reset);
 
 function reset() {
   //Reiniciar la variable de juego terminado a falso
+  isGameOver = false;
+  const players = [p1, p2];
   //Por cada jugador
-  //Cambiar la puntuación a 0
-  //Cambiar el texto los puntos a 0
-  //Remover las clases de ganar y perder
-  //habilitar nuevamente los botones (con la propiedad disabled)
+  players.forEach((player) => {
+    //Cambiar la puntuación a 0
+    player.score = 0;
+    //Cambiar el texto los puntos a 0
+    player.display.textContent = 0;
+    //Remover las clases de ganar y perder
+    player.display.classList.remove("won");
+    player.display.classList.remove("lost");
+    //habilitar nuevamente los botones (con la propiedad disabled)
+    player.button.disabled = false;
+  });
 }
 
 /*Calificación
